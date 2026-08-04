@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Love Story 🎬</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND VIDEOS -->
+
+<video class="background-video" id="bgVideo" autoplay muted playsinline>
+
+    <source id="videoSource" src="video/love1.mp4" type="video/mp4">
+
+</video>
+
+
+<div class="video-dark-overlay"></div>
+
+
+
+
+
+<!-- PREMIERE LOCK -->
+
+<div class="lock-screen" id="lockScreen">
+
+
+    <div class="lock-box">
+
+
+        <div class="netflix">
+            N
+        </div>
+
+
+        <h2>
+            Premiere Access
+        </h2>
+
+
+        <p>
+            Enter our special date
+        </p>
+
+
+        <input 
+        type="password"
+        id="password"
+        placeholder="MMDDYYYY">
+
+
+        <button onclick="unlockLove()">
+            Watch Now 🎬
+        </button>
+
+
+        <button id="musicStart" onclick="startMusic()" style="display:none;">
+            Play Soundtrack 🎵
+        </button>
+
+
+        <p id="error"></p>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- CINEMATIC TRANSITION -->
+
+<div class="netflix-intro" id="netflixIntro">
+
+</div>
+
+
+
+
+
+<!-- INTRO -->
+
+<section class="scene active" id="intro">
+
+
+<div class="movie">
+
+
+<p class="small">
+A STORY CREATED BY TWO HEARTS
+</p>
+
+
+<h1>
+Royskiee & Renziee
+</h1>
+
+
+<p class="present">
+PRESENTS
+</p>
+
+
+<h2>
+OUR LOVE STORY
+</h2>
+
+
+<button onclick="nextScene()">
+Start Film ▶
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- EPISODE -->
+
+<section class="scene">
+
+
+<div class="movie">
+
+
+<p>
+SEASON 1
+</p>
+
+
+<h1>
+11 MONTHS
+</h1>
+
+
+<h2>
+STILL CHOOSING YOU ❤️
+</h2>
+
+
+<button onclick="previousScene()" class="back-btn">
+← Back
+</button>
+
+
+<button onclick="nextScene()">
+Continue
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- MEMORIES -->
+
+
+<section class="scene">
+
+
+<h2>
+OUR MEMORIES
+</h2>
+
+
+<p class="subtitle">
+Scenes from our journey
+</p>
+
+
+
+<div class="photos">
+
+
+<img src="images/1.jpg">
+<img src="images/2.jpg">
+<img src="images/3.jpg">
+<img src="images/4.jpg">
+<img src="images/5.jpg">
+<img src="images/6.jpg">
+
+<img src="images/7.jpg">
+<img src="images/8.jpg">
+<img src="images/9.jpg">
+<img src="images/10.jpg">
+<img src="images/11.jpg">
+<img src="images/12.jpg">
+
+<img src="images/13.jpg">
+<img src="images/14.jpg">
+<img src="images/15.jpg">
+<img src="images/16.jpg">
+<img src="images/17.jpg">
+<img src="images/18.jpg">
+
+
+</div>
+
+
+
+<button onclick="previousScene()" class="back-btn">
+← Back
+</button>
+
+
+<button onclick="nextScene()">
+Next Scene
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- LETTER -->
+
+
+<section class="scene">
+
+
+<div class="letter">
+
+
+<h2>
+A Letter For You
+</h2>
+
+
+<p id="typing"></p>
+
+
+</div>
+
+
+
+<button onclick="previousScene()" class="back-btn">
+← Back
+</button>
+
+
+<button onclick="nextScene()">
+Final Scene
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ENDING -->
+
+
+<section class="scene">
+
+
+<div class="movie">
+
+
+<p>
+THE STORY CONTINUES...
+</p>
+
+
+<h1>
+11 MONTHS
+</h1>
+
+
+<h2>
+ONE CHAPTER AWAY ❤️
+</h2>
+
+
+
+<button onclick="previousScene()" class="back-btn">
+← Back
+</button>
+
+
+<button onclick="showLove()">
+Play Again 🎬
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- MUSIC -->
+
+<audio id="bgMusic" loop>
+
+    <source src="music/music.mp3" type="audio/mp3">
+
+</audio>
+
+
+
+<button class="music-btn" onclick="startMusic()">
+
+    🎵 Play Our Song
+
+</button>
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

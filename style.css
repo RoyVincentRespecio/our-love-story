@@ -1,0 +1,887 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    width:100%;
+    height:100vh;
+
+    background:#000;
+
+    color:white;
+
+    font-family:'Inter',sans-serif;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+/* =========================
+   NETFLIX LOCK SCREEN
+========================= */
+
+
+.lock-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    z-index:9999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.lock-box{
+
+    text-align:center;
+
+    width:85%;
+
+    max-width:350px;
+
+}
+
+
+
+.netflix{
+
+    color:#e50914;
+
+    font-size:100px;
+
+    font-weight:900;
+
+    font-family:Arial;
+
+}
+
+
+
+.lock-box h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:32px;
+
+    margin-top:10px;
+
+}
+
+
+
+.lock-box p{
+
+    color:#aaa;
+
+    margin:15px;
+
+}
+
+
+
+.lock-box input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:5px;
+
+    text-align:center;
+
+    font-size:16px;
+
+}
+
+
+
+button{
+
+    margin-top:20px;
+
+    padding:13px 30px;
+
+    border:none;
+
+    border-radius:5px;
+
+    background:#e50914;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+
+
+/* =========================
+ NETFLIX INTRO ANIMATION
+========================= */
+
+
+.netflix-intro{
+
+    position:fixed;
+
+    inset:0;
+
+    background:black;
+
+    z-index:10000;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:1;
+
+    transition:2s;
+
+}
+
+
+
+.big-n{
+
+    font-family:Arial;
+
+    font-size:170px;
+
+    font-weight:900;
+
+    color:#e50914;
+
+    animation:netflixReveal 3s ease;
+
+}
+
+
+
+
+@keyframes netflixReveal{
+
+
+0%{
+
+    opacity:0;
+
+    transform:scale(4);
+
+}
+
+
+
+50%{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+
+
+100%{
+
+    opacity:1;
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+ MOVIE SCENES
+========================= */
+
+
+.scene{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:30px;
+
+
+}
+
+
+
+.scene.active{
+
+    display:flex;
+
+    animation:sceneFade 1.5s;
+
+}
+
+
+
+
+@keyframes sceneFade{
+
+
+from{
+
+opacity:0;
+
+transform:scale(1.1);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+
+}
+
+
+
+
+
+
+.movie h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:60px;
+
+    margin:25px 0;
+
+}
+
+
+
+.movie h2{
+
+    font-size:35px;
+
+}
+
+
+
+.small{
+
+    letter-spacing:7px;
+
+    font-size:12px;
+
+    color:#aaa;
+
+}
+
+
+
+.present{
+
+    color:#888;
+
+    letter-spacing:5px;
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+ PHOTOS
+========================= */
+
+
+.subtitle{
+
+    color:#aaa;
+
+}
+
+
+
+.photos{
+
+    display:flex;
+
+    gap:20px;
+
+    width:100%;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    margin-top:25px;
+
+}
+
+
+
+.photos::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+
+
+.photos img{
+
+
+    min-width:85%;
+
+    height:60vh;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    scroll-snap-align:center;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+ LETTER
+========================= */
+
+
+.letter{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    max-width:600px;
+
+}
+
+
+
+.letter h2{
+
+    font-family:'Playfair Display',serif;
+
+    margin-bottom:20px;
+
+}
+
+
+
+#typing{
+
+    line-height:1.8;
+
+    text-align:left;
+
+}
+
+
+
+
+
+
+
+/* =========================
+ MUSIC BUTTON
+========================= */
+
+
+.music-btn{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:20px;
+
+    z-index:100;
+
+    border-radius:30px;
+
+}
+
+
+
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+
+.movie h1{
+
+    font-size:42px;
+
+}
+
+
+
+.movie h2{
+
+    font-size:25px;
+
+}
+
+
+
+.big-n{
+
+    font-size:130px;
+
+}
+
+
+}
+/* =========================
+   VIDEO INTRO CINEMATIC
+========================= */
+
+
+.video-intro{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:black;
+
+    z-index:9998;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    opacity:1;
+
+    transition:2s;
+
+}
+
+
+
+.video-intro video{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    filter:brightness(0.55);
+
+}
+
+
+
+.video-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        rgba(0,0,0,0.35),
+
+        rgba(0,0,0,0.75)
+
+    );
+
+}
+
+
+
+
+
+/* =========================
+   NETFLIX N IMPROVED
+========================= */
+
+
+.netflix-intro{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    z-index:9999;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:2s;
+
+}
+
+
+
+.big-n{
+
+    font-family:Arial, sans-serif;
+
+    font-size:170px;
+
+    font-weight:900;
+
+    color:#e50914;
+
+    animation:
+
+    netflixZoom 3s ease;
+
+}
+
+
+
+@keyframes netflixZoom{
+
+
+0%{
+
+    opacity:0;
+
+    transform:scale(5);
+
+}
+
+
+
+40%{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+
+
+100%{
+
+    opacity:1;
+
+    transform:scale(1.1);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+ MOBILE OPTIMIZATION
+========================= */
+
+
+@media(max-width:600px){
+
+
+.video-intro video{
+
+    object-position:center;
+
+}
+
+
+
+.big-n{
+
+    font-size:130px;
+
+}
+
+
+}
+
+/* =========================
+   FINAL LETTER SCROLL FIX
+========================= */
+
+
+body{
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+}
+
+
+
+.scene{
+
+    min-height:100vh;
+
+    height:auto;
+
+    overflow-y:auto;
+
+    padding:40px 20px;
+
+}
+
+
+
+.letter{
+
+    width:90%;
+
+    max-width:800px;
+
+    max-height:75vh;
+
+    overflow-y:auto;
+
+    padding:35px;
+
+    background:rgba(255,255,255,0.10);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+}
+
+
+
+#typing{
+
+    color:white;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    text-align:left;
+
+    white-space:normal;
+
+    word-break:break-word;
+
+}
+
+
+
+#typing::-webkit-scrollbar{
+
+    width:5px;
+
+}
+
+
+#typing::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,0.4);
+
+    border-radius:10px;
+
+}
+
+
+
+@media(max-width:600px){
+
+
+    .letter{
+
+        padding:20px 15px;
+
+        max-height:60vh;
+
+    }
+
+
+    #typing{
+
+        font-size:20px;
+
+        line: height 0.9em;;
+
+    }
+
+
+}
+
+/* =========================
+   BACKGROUND VIDEO FRAME FIX
+========================= */
+
+
+.background-video{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    z-index:-2;
+
+    pointer-events:none;
+
+}
+
+
+
+.video-dark-overlay{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,0.45);
+
+    z-index:-1;
+
+    pointer-events:none;
+
+}
+
+
+
+/* MOBILE VIDEO ALIGNMENT */
+
+@media(max-width:600px){
+
+
+    .background-video{
+
+        object-fit:cover;
+
+        object-position:center center;
+
+    }
+
+
+}
+
+/* =========================
+   VIDEO CINEMATIC FADE
+========================= */
+
+
+.background-video{
+
+    transition:opacity 1.5s ease;
+
+    opacity:1;
+
+}
+
+
+
+.background-video.fade-out{
+
+    opacity:0;
+
+}
+
+
+
+.video-dark-overlay{
+
+    transition:1.5s ease;
+
+}
